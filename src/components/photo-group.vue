@@ -1,8 +1,8 @@
 <template>
   <ul class="photo-group">
     <transition-group name="cell" tag="li">
-      <li class="sub-item" v-for="item in picCollection" :key="item.id">
-        <img :src="item.src" alt="" :id="item.id">
+      <li class="sub-item" v-for="item in picCollection" :key="item.id" :id="item.id">
+        <img :src="item.src" alt="">
       </li>
     </transition-group>
   </ul>
@@ -35,7 +35,12 @@ export default {
   props: ['picCollection'],
   data () {
     return {
+      isDrag: false
     }
+  },
+  mounted () {
+  },
+  methods: {
   }
 }
 </script>
