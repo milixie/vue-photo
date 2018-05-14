@@ -1,8 +1,10 @@
 <template>
   <ul class="photo-group">
-    <li class="sub-item" v-for="item in picCollection" :key="item.id">
-      <img :src="item.src" alt="" :id="item.id">
-    </li>
+    <transition-group name="cell" tag="li">
+      <li class="sub-item" v-for="item in picCollection" :key="item.id">
+        <img :src="item.src" alt="" :id="item.id">
+      </li>
+    </transition-group>
   </ul>
 </template>
 
@@ -14,8 +16,8 @@
   background: #f0f0f0;
   .sub-item {
     float: left;
-    width: 200px;
-    height: 200px;
+    width: 150px;
+    height: 150px;
     padding: 10px;
     list-style: none;
     transition: transform 1s;
@@ -30,21 +32,9 @@
 <script>
 export default {
   name: 'photoGroup',
+  props: ['picCollection'],
   data () {
     return {
-    }
-  },
-  computed: {
-    picCollection () {
-      const len = 9
-      const picCollection = []
-      for (let i = 0; i < len; i++) {
-        picCollection.push({
-          id: i + 1,
-          src: `http://7xj5et.com1.z0.glb.clouddn.com/gallery/img/${i + 1}.jpg`
-        })
-      }
-      return picCollection
     }
   }
 }
