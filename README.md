@@ -1,6 +1,6 @@
-# vue-photo
+# vue-Demos
 
-> 一个小的照片墙demo
+> 使用vue制作的一些demo
 
 ## Build Setup
 
