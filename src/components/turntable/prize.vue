@@ -4,7 +4,7 @@
       <div class="mask"></div>
       <span class="close" @click="close">×</span>
       <div class="content">
-        奖品
+        <p>{{defaultWord}}</p>
         <p>{{prize}}</p>
       </div>
     </div>
@@ -56,6 +56,19 @@
 export default {
   name: 'prize',
   props: ['prize', 'show'],
+  data () {
+    return {
+
+    }
+  },
+  computed: {
+    defaultWord () {
+      if (this.prize === '谢谢参与') {
+        return '很遗憾'
+      }
+      return '恭喜您抽中'
+    },
+  },
   methods: {
     close () {
       this.$emit('close')

@@ -2,7 +2,9 @@
   <div class="turntable">
     <prize :prize="prize" :show="showPrize" @close="closePrize"/>
     <canvas id="turnCanvas" width="420" height="420" class="turning" :style="styles"></canvas>
-    <button class="lottery" @click="lottery">抽奖</button>
+    <div class="lottery" :class="{'lottery-over': lotteryTime < 1}" @click="lottery">
+      <p>抽奖</p>
+      <span>({{lotteryTime}}次机会)</span></div>
   </div>
 </template>
 <style scoped lang="scss">
@@ -25,9 +27,12 @@
     border-radius: 50%;
     z-index: 100;
     font-size: 20px;
-    background: #f90;
+    background: #f70;
     border: 4px solid #f40;
-    outline: none;
+    box-shadow: 2px 2px 2px #ddd;
+    color: #fff;
+    line-height: 60px;
+    cursor: pointer;
     &:after {
       content: '';
       position: absolute;
@@ -38,6 +43,21 @@
       border-width: 0 5px 40px 5px;
       border-style: solid;
       border-color: transparent transparent #f40 transparent;
+    }
+    &.lottery-over {
+      background: #999;
+      border: 4px solid #ccc;
+      &:after {
+        border-color: transparent transparent #ccc transparent;
+      }
+    }
+    span {
+      position: absolute;
+      bottom: 15px;
+      left: 12px;
+      font-size: 12px;
+      display: inline-block;
+      line-height: 1em;
     }
   }
 }
@@ -57,6 +77,7 @@ export default {
       n: 0,
       rotateAngle: 0,
       showPrize: false,
+      lotteryTime: 5,
       turnPlate: {
         text: ['10元', '谢谢参与', '20元', '5元', '谢谢参与', '30元', '5元', '10元', '10元优惠券', '5元优惠券'],
         colors: ['#fff', '#fff4d6', '#fff', '#fff4d6', '#fff', '#fff4d6', '#fff', '#fff4d6', '#fff', '#fff4d6']
@@ -106,6 +127,9 @@ export default {
     },
     lottery () {
       if (this.isTurning) return
+      if (this.lotteryTime < 1) {
+        return
+      }
       this.isTurning = true
       this.rotateAngle = parseInt(((Math.random()) * 20 + this.n * 20)) * 36
       this.styles = `transform: rotate(${this.rotateAngle}deg)`
@@ -115,6 +139,7 @@ export default {
         this.isTurning = false
         this.prize = this.getPrize(index)
         this.showPrize = true
+        this.lotteryTime--
       }, 3500)
     },
     closePrize () {
