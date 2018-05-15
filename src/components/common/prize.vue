@@ -67,7 +67,7 @@ export default {
         return '很遗憾'
       }
       return '恭喜您抽中'
-    },
+    }
   },
   methods: {
     close () {

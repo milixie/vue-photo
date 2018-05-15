@@ -63,7 +63,7 @@
 }
 </style>
 <script>
-import Prize from './prize'
+import Prize from '../common/prize'
 export default {
   name: 'Turntable',
   mounted () {

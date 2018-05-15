@@ -18,3 +18,13 @@ npm run build
 npm run build --report
 ```
 可以download项目查看具体的效果
+
+启动项目后
+
+```
+// 查看照片墙项目效果
+http://localhost:8080/#/photo
+
+// 查看大转盘抽奖系统效果
+http://localhost:8080/#/turntable
+```
