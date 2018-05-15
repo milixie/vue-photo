@@ -116,6 +116,9 @@ export default {
 
       ctx.beginPath()
       ctx.arc(210, 210, 200, 0, Math.PI * 2, true) // 绘制
+      ctx.arc(210, 210, 194, 0, Math.PI * 2, true) // 绘制
+      ctx.lineWidth = 6
+      ctx.strokeStyle = '#E5302F'
       ctx.stroke()
       ctx.closePath()
     },
