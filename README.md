@@ -27,4 +27,7 @@ http://localhost:8080/#/photo
 
 // 查看大转盘抽奖系统效果
 http://localhost:8080/#/turntable
+
+// 查看方格抽奖系统效果
+http://localhost:8080/#/lottery
 ```
