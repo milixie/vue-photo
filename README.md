@@ -2,20 +2,17 @@
 
 > 使用vue制作的一些demo
 
-## Build Setup
+## 克隆启动项目
 
-``` bash
-# install dependencies
+``` 
+git clone git@github.com:milixie/vue-photo.git
+
+cd vue-photo
+
 npm install
 
 # serve with hot reload at localhost:8080
 npm run dev
-
-# build for production with minification
-npm run build
-
-# build for production and view the bundle analyzer report
-npm run build --report
 ```
 可以download项目查看具体的效果
 
