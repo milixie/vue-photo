@@ -23,17 +23,20 @@ npm run dev
 http://localhost:8080/#/photo
 ```
 ![照片墙](http://7xj5et.com1.z0.glb.clouddn.com/vue/photo.gif)
+[照片墙](https://github.com/milixie/vue-photo/blob/master/static/image/photo.gif)
 
 ```
 // 查看大转盘抽奖系统效果
 http://localhost:8080/#/turntable
 ```
 ![大转盘抽奖系统](http://7xj5et.com1.z0.glb.clouddn.com/vue/turntable.gif)
+[大转盘抽奖系统](https://github.com/milixie/vue-photo/blob/master/static/image/turntable.gif)
 ```
 // 查看方格抽奖系统效果
 http://localhost:8080/#/lottery
 ```
 ![方格抽奖系统](http://7xj5et.com1.z0.glb.clouddn.com/vue/lottery.gif)
+[方格抽奖系统](https://github.com/milixie/vue-photo/blob/master/static/image/lottery.gif)
 ```
 // 查看canvas基本效果
 http://localhost:8080/#/canvas/1
@@ -55,18 +58,21 @@ http://localhost:8080/#/canvas/4
 http://localhost:8080/#/canvas/5
 ```
 ![笑脸](http://7xj5et.com1.z0.glb.clouddn.com/vue/canvas5.gif)
+[笑脸](https://github.com/milixie/vue-photo/blob/master/static/image/canvas5.gif)
 
 ```
 // 查看canvas做的随机线条的效果
 http://localhost:8080/#/canvas/6
 ```
 ![随机线条](http://7xj5et.com1.z0.glb.clouddn.com/vue/canvas6.gif)
+[随机线条](https://github.com/milixie/vue-photo/blob/master/static/image/canvas6.gif)
 
 ```
 // 查看canvas做的手表的效果
 http://localhost:8080/#/canvas/7
 ```
 ![使用canvas做的手表](http://7xj5et.com1.z0.glb.clouddn.com/vue/canvas7.gif)
+[使用canvas做的手表](https://github.com/milixie/vue-photo/blob/master/static/image/canvas7.gif)
 
 
 
