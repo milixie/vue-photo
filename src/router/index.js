@@ -4,6 +4,7 @@ import HelloWorld from '@/components/HelloWorld'
 import Photo from '@/components/photo/photo'
 import Turntable from '@/components/turntable/turntable'
 import SquareLottery from '@/components/squareLottery/squareLottery'
+import Canvas from '@/components/canvas/canvas'
 
 Vue.use(Router)
 
@@ -24,5 +25,9 @@ export default new Router({
     path: '/lottery',
     name: 'SquareLottery',
     component: SquareLottery
+  }, {
+    path: '/canvas/:id',
+    name: 'Canvas',
+    component: Canvas
   }]
 })
