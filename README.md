@@ -49,3 +49,8 @@ http://localhost:8080/#/canvas/6
 // 查看canvas做的手表的效果
 http://localhost:8080/#/canvas/7
 ```
+
+[笑脸](http://7xj5et.com1.z0.glb.clouddn.com/vue/canvas5.gif)
+
+
+
