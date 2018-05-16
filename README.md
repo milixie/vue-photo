@@ -45,4 +45,7 @@ http://localhost:8080/#/canvas/5
 
 // 查看canvas做的随机线条的效果
 http://localhost:8080/#/canvas/6
+
+// 查看canvas做的手表的效果
+http://localhost:8080/#/canvas/7
 ```

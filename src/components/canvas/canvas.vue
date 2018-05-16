@@ -26,6 +26,9 @@
       <button class="btn" @click="stopMove">停止运动</button>
       <canvas id="canvas6" class="canvas" width="400" height="400"></canvas>
     </div>
+    <div v-if="Number(id) === 7">
+      <canvas id="canvas7" class="canvas" width="400" height="400"></canvas>
+    </div>
   </div>
 </template>
 
@@ -85,6 +88,9 @@ export default {
         break
       case 6:
         this.initCanvas6()
+        break
+      case 7:
+        this.initCanvas7()
         break
       default:
         break
@@ -341,6 +347,98 @@ export default {
     },
     stopMove () {
       clearInterval(this.timer)
+    },
+    // 表
+    initCanvas7 () {
+      const canvas7 = document.getElementById('canvas7')
+      const ctx = canvas7.getContext('2d')
+      ctx.clearRect(0, 0, 400, 400)
+      canvas7.width = canvas7.width
+      canvas7.height = canvas7.height
+      ctx.beginPath()
+      ctx.lineWidth = 10
+      ctx.strokeStyle = '#ffeb3b8f'
+      ctx.arc(200, 200, 188, 0, 2 * Math.PI)
+      ctx.stroke()
+      ctx.closePath()
+      ctx.beginPath()
+      ctx.lineWidth = 1
+      ctx.strokeStyle = '#f90'
+      ctx.fillStyle = '#ffc10717'
+      ctx.arc(200, 200, 180, 0, 2 * Math.PI)
+      ctx.fill()
+      ctx.stroke()
+      ctx.closePath()
+      ctx.beginPath()
+      ctx.fillStyle = '#f60'
+      ctx.arc(200, 200, 5, 0, 2 * Math.PI)
+      ctx.fill()
+      ctx.closePath()
+      ctx.save()
+      ctx.lineWidth = 5
+      ctx.translate(200, 200)
+      for (let i = 0; i < 12; i++) {
+        ctx.beginPath()
+        ctx.rotate(Math.PI / 6)
+        this.lineFun(ctx, 160, 0, 180, 0)
+        ctx.stroke()
+      }
+      ctx.restore()
+
+      ctx.translate(200, 200)
+      ctx.lineWidth = 2
+      for (let i = 0; i < 60; i++) {
+        ctx.beginPath()
+        ctx.rotate(Math.PI / 30)
+        this.lineFun(ctx, 170, 0, 180, 0)
+        ctx.stroke()
+      }
+      ctx.restore()
+
+      ctx.rotate(-Math.PI / 2)
+      let date = new Date()
+      let hours = date.getHours()
+      let minutes = date.getMinutes()
+      let seconds = date.getSeconds()
+      // 时针
+      this.initHours(ctx, hours, minutes, seconds)
+      // 分针
+      this.initMinutes(ctx, hours, minutes, seconds)
+      // 秒针
+      this.initSeconds(ctx, seconds)
+
+      window.requestAnimationFrame(this.initCanvas7)
+    },
+    initHours (ctx, hours, minutes, seconds) {
+      ctx.save()
+      ctx.beginPath()
+      ctx.lineWidth = 6
+      ctx.strokeStyle = '#f60'
+      ctx.rotate((Math.PI / 6) * (hours % 12) + (Math.PI / 360) * minutes + (Math.PI / 21600) * seconds)
+      this.lineFun(ctx, 0, 0, 80, 0)
+      ctx.stroke()
+      ctx.closePath()
+      ctx.restore()
+    },
+    initMinutes (ctx, hours, minutes, seconds) {
+      ctx.save()
+      ctx.beginPath()
+      ctx.lineWidth = 4
+      ctx.rotate((Math.PI / 30) * minutes + (Math.PI / 1800) * seconds)
+      this.lineFun(ctx, 0, 0, 110, 0)
+      ctx.stroke()
+      ctx.closePath()
+      ctx.restore()
+    },
+    initSeconds (ctx, seconds) {
+      ctx.save()
+      ctx.beginPath()
+      ctx.lineWidth = 2
+      ctx.rotate((Math.PI / 30) * seconds)
+      this.lineFun(ctx, 0, 0, 150, 0)
+      ctx.stroke()
+      ctx.closePath()
+      ctx.restore()
     }
   }
 }
