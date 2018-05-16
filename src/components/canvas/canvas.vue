@@ -45,7 +45,7 @@
       box-shadow: 1px 1px 2px #ddd;
     }
     &:active {
-      background: #f8f8f8;
+      background: #f0f0f0;
     }
   }
   .canvas {
@@ -66,7 +66,8 @@ export default {
         leftEyeIsOpen: true,
         rightEyesIsOpen: true
       },
-      timer: null
+      timer: null,
+      isBlink: false
     }
   },
   mounted () {
@@ -302,9 +303,11 @@ export default {
       this.initCloseRightEye(ctx)
     },
     autoBlink () {
+      if (this.isBlink) return
       const that = this
       const canvas5 = document.getElementById('canvas5')
       const ctx = canvas5.getContext('2d')
+      this.isBlink = true
       this.timer = setInterval(() => {
         if (that.eyeStatus.leftEyeIsOpen) {
           that.initCloseLeftEye(ctx)
@@ -316,10 +319,11 @@ export default {
         } else {
           that.initOpenRightEye(ctx)
         }
-      }, 1000)
+      }, 400)
     },
     stopAutoBlink () {
       clearInterval(this.timer)
+      this.isBlink = false
     },
     initBaseLine (ctx) {
       ctx.strokeStyle = '#f10'
@@ -343,7 +347,7 @@ export default {
         canvas6.height = canvas6.height
         ctx.clearRect(0, 0, 400, 400)
         that.initBaseLine(ctx)
-      }, 1000)
+      }, 300)
     },
     stopMove () {
       clearInterval(this.timer)
