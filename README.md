@@ -50,7 +50,7 @@ http://localhost:8080/#/canvas/6
 http://localhost:8080/#/canvas/7
 ```
 
-[笑脸](http://7xj5et.com1.z0.glb.clouddn.com/vue/canvas5.gif)
+![笑脸](http://7xj5et.com1.z0.glb.clouddn.com/vue/canvas5.gif)
 
 
 
